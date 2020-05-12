@@ -12,21 +12,28 @@
     </head>
     <body>
         <div id="fullpage">
+            <!-- section one -->
             <div class="section">
                 <div class="container">
                     <h1>HaHa!</h1>
                 </div>
             </div>
+
+            <!-- section two -->
             <div class="section">
                 <div class="container">
                     <h1>HaHa2!</h1>
                 </div>
             </div>
+
+            <!-- section three -->
             <div class="section">
                 <div class="container">
                     <h1>HaHa3!</h1>
                 </div>
             </div>
+
+            <!-- section four -->
             <div class="section">
                 <div class="container">
                     <h1>HaHa4!</h1>
@@ -36,6 +43,8 @@
     </body>
 
     <script type="text/javascript">
-        $("#fullpage").fullpage();
+        $("#fullpage").fullpage({
+            verticalCentered:false                //关闭垂直居中
+        });
     </script>
 </html>
