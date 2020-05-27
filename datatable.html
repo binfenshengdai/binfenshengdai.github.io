@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>缤纷圣代</title>
+    <!-- 样式 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/fullPage.js/3.0.8/fullpage.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="./rowReorder.dataTables.css" rel="stylesheet">
+    <link href="theme/layer/theme/default/layer.css" rel="stylesheet">
+    <!-- script -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/fullPage.js/3.0.8/fullpage.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="dataTables.rowReorder.js"></script>
+    <script src="theme/layer/layer.js"></script>
+</head>
+
+<body>
+    <div id="result">
+
+    </div>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Seq.</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+<script>
+    var table;
+ $(document).ready(function() {
+    table = $('#example').DataTable( {
+        rowReorder: {
+            updated:true,
+            enable:true,
+            selector: 'tr',
+            dataSrc:'seq'
+        },
+        columns: [
+            {data:"seq"},
+            {data:"name"}
+        ],
+        data:[{seq:"1",name:"字段1"},{seq:"2",name:"字段2"},{seq:"3",name:"字段3"}],
+        columnDefs: [
+            { targets: 0, visible: false }
+        ]
+    } );
+    
+    // table.on( 'row-reorder', function ( e, diff, edit ) {
+    //     var result = 'Reorder started on row: '+edit.triggerRow.data()[1]+'<br>';
+ 
+    //     for ( var i=0, ien=diff.length ; i<ien ; i++ ) {
+    //         var rowData = table.row( diff[i].node ).data();
+ 
+    //         result += rowData[1]+' updated to be in position '+
+    //             diff[i].newData+' (was '+diff[i].oldData+')<br>';
+    //     }
+ 
+    //     $('#result').html( 'Event result:<br>'+result );
+    // } );
+} );
+</script>
+
+</html>
