@@ -2,7 +2,7 @@ var table = null;
 var i = 1;
 
 window.onload = function(){
-    $("#loading-div").hide();
+    $("#loading-div").fadeout();
 }
 
 $(document).ready(function () {
